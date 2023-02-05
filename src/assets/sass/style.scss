@@ -14,14 +14,16 @@ body {
   font: 100% $font-stack;
   color: $primary-color;
   text-align: left;
-
-  background-color: #40404f;
   height: 100%;
   max-height: 100%;
   min-height: 100%;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
+}
+
+.dark-bg {
+  background-color: #40404f;
 }
 
 .header {
@@ -68,6 +70,128 @@ body {
   margin: 0 auto;
   border: 1px solid black;
   background-color: #fff;
+}
+
+.container_full {
+  height: 100%;
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.chat_list {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  overflow: auto;
+  padding-bottom: 1rem;
+
+  .chatBlock {
+    .u-topic {
+      font-weight: 600;
+    }
+    .u-description {
+      color: #000;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+
+}
+
+.sidepopup {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 60px;
+  width: 340px;
+  height: 100vh;
+  border: 1px solid #000;
+
+  &__head {
+    background-color: #6B7378;
+
+    h2 {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 600;
+    }
+    .btn {
+      padding: .2rem .7rem;
+    }
+  }
+
+  &__panel {
+    flex: 1;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    overflow: auto;
+    padding-bottom: 1rem;
+  }
+
+  .chatBlock {
+    .u-pic {
+      position: relative;
+      &:before {
+        content: "";
+        width: 5px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: -5px;
+      }
+    }
+
+    &.online {
+      .u-pic {
+        &:before {
+          background-color: #4EDD79;
+        }
+      }
+    }
+  
+    &.offline {
+      .u-pic {
+        &:before {
+          background-color: #ED1C24;
+        }
+      }
+    }
+  }
+}
+
+.chat_field {
+  .form-control {
+    overflow: scroll;
+    border-radius: 2px;
+    border: 1px solid black;
+    padding: 6px;
+    max-height: 36px;
+    min-height: 36px;
+    height: 36px;
+    font-weight: 500;
+    overflow: hidden;
+    resize: none;
+  }
+  .btn {
+    border-radius: 0;
+  }
+}
+
+.chat_options {
+  background: #6B7378;
+  padding: .3rem .5rem;
+  .btn {
+    border-color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: .3rem;
+    &:first-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .tab_nav {
@@ -123,11 +247,9 @@ body {
 
 .scrollable {
   flex: 1;
-  overflow: auto;
   word-wrap: break-word;
   overflow-x: hidden;
   overflow-wrap: break-word;
-  max-height: calc(100vh - 34px);
   overflow: auto;
   padding-bottom: 1rem;
 }

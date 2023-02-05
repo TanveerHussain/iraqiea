@@ -68,7 +68,7 @@ function bootstrapJS(cb) {
 
 
 function generateHTML(cb) {
-    src("./src/views/index.ejs")
+    src("./src/views/*.ejs")
         .pipe(ejs({
             title: "Hello Semaphore CI!",
         }))
