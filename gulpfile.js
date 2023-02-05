@@ -8,7 +8,7 @@ const sync = require("browser-sync").create();
 function generateCSS(cb) {
     src('./src/assets/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('public/css'))
+        .pipe(dest('./docs/css'))
         .pipe(sync.stream());
     cb();
 }
@@ -16,7 +16,7 @@ function generateCSS(cb) {
 function bootstrapCSS(cb) {
     src('node_modules/bootstrap/scss/bootstrap.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('public/css'))
+        .pipe(dest('./docs/css'))
         .pipe(sync.stream());
     cb();
 }
@@ -30,7 +30,7 @@ function generateHTML(cb) {
         .pipe(rename({
             extname: ".html"
         }))
-        .pipe(dest("public"));
+        .pipe(dest("./docs"));
     cb();
 }
 
@@ -44,13 +44,13 @@ function watchFiles(cb) {
 function browserSync(cb) {
     sync.init({
         server: {
-            baseDir: "./public"
+            baseDir: "./docs"
         }
     });
 
     watch('./src/views/**.ejs', generateHTML);
     watch('./src/assets/sass/**.scss', generateCSS);
-    watch("./public/**.html").on('change', sync.reload);
+    watch("./docs/**.html").on('change', sync.reload);
 }
 
 
