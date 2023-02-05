@@ -3,6 +3,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font: 100% "Noto Sans Arabic", sans-serif;
   color: #333;
@@ -13,6 +17,7 @@ body {
   min-height: 100%;
   margin: 0px;
   padding: 0px;
+  overflow: hidden;
 }
 
 .header_top {
@@ -29,6 +34,7 @@ body {
 .header_top .btn {
   border-radius: 0;
   color: #fff;
+  padding: 0.5rem 0.5rem;
 }
 .header_nav {
   padding: 0.8rem 0.5rem;
@@ -151,4 +157,5 @@ body {
   font-size: 12px;
   text-align: center;
   border-top: 1px solid #ccc;
+  height: 30px;
 }
