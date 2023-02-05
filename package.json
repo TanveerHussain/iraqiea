@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/TanveerHussain/iraqiea/issues"
   },
-  "homepage": "https://github.com/TanveerHussain/iraqiea#readme",
+  "homepage": "https://github.com/TanveerHussain/public/index.html",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
