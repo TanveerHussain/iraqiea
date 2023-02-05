@@ -6,7 +6,7 @@ a {
 body {
   font: 100% "Noto Sans Arabic", sans-serif;
   color: #333;
-  text-align: left;
+  text-align: right;
   background-color: #40404f;
   height: 100%;
   max-height: 100%;
@@ -73,15 +73,15 @@ body {
   background-color: transparent;
   border: 1px solid #ccc;
   border-bottom: none;
-  border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .tab_nav .btn {
   border-radius: 0;
 }
 
 .form-control {
-  text-align: left;
+  text-align: right;
   border-radius: 0.2rem;
   border-color: #000;
 }
@@ -133,7 +133,7 @@ body {
   margin: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-right: 0.6rem;
+  margin-left: 0.6rem;
   flex-shrink: 0;
 }
 .chatBlock .u-topic {
