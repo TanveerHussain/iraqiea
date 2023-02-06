@@ -8,9 +8,8 @@ html {
 }
 
 body {
-  font: 100% "Noto Sans Arabic", sans-serif;
+  font-family: sans-serif;
   color: #333;
-  text-align: left;
   height: 100%;
   max-height: 100%;
   min-height: 100%;
@@ -25,14 +24,15 @@ body {
 
 .header_top {
   background-color: #6B7378;
-  height: 50px;
+  height: 40px;
   align-items: center;
   justify-content: space-between;
   padding: 0 0.5rem;
 }
 .header_top .site-title {
   color: #fff;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 15px;
 }
 .header_top .btn {
   border-radius: 0;
@@ -40,18 +40,20 @@ body {
   padding: 0.5rem 0.5rem;
 }
 .header_nav {
-  padding: 0.8rem 0.5rem;
+  padding: 0.1rem 1.2rem;
 }
 .header_nav .btn {
   border-radius: 0;
-  padding: 0.2rem 1rem;
-  font-size: 14px;
+  padding: 0.1rem 0;
+  font-size: 12px;
   margin: 0 0.1rem;
   border-color: #2e6da4;
+  flex: 1;
+  font-weight: bold;
 }
 .header .banner-img {
   font-size: 0;
-  margin: 0.5rem 0;
+  margin: 0.2rem 0;
 }
 
 .container_sm {
@@ -91,11 +93,23 @@ body {
   background-color: #fff;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   bottom: 60px;
   width: 340px;
   height: 100vh;
   border: 1px solid #000;
+  opacity: 0;
+  visibility: hidden;
+}
+.sidepopup .addGroup {
+  border-radius: 0;
+  margin: 0.2rem;
+  border-color: #000;
+  padding: 0.1rem 0.5rem;
+}
+.sidepopup.show {
+  visibility: visible;
+  opacity: 1;
 }
 .sidepopup__head {
   background-color: #6B7378;
@@ -108,13 +122,15 @@ body {
 .sidepopup__head .btn {
   padding: 0.2rem 0.7rem;
 }
-.sidepopup__panel {
+.sidepopup .tab-content {
   flex: 1;
   word-wrap: break-word;
   overflow-x: hidden;
   overflow-wrap: break-word;
   overflow: auto;
-  padding-bottom: 1rem;
+}
+.sidepopup .tab-content .tab-pane {
+  height: 100%;
 }
 .sidepopup .chatBlock .u-pic {
   position: relative;
@@ -142,9 +158,10 @@ body {
   max-height: 36px;
   min-height: 36px;
   height: 36px;
-  font-weight: 500;
+  font-weight: bold;
   overflow: hidden;
   resize: none;
+  text-align: right;
 }
 .chat_field .btn {
   border-radius: 0;
@@ -152,20 +169,22 @@ body {
 
 .chat_options {
   background: #6B7378;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem;
 }
 .chat_options .btn {
   border-color: #000;
   font-weight: 600;
   font-size: 14px;
-  margin-right: 0.3rem;
+  margin-right: 0.2rem;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.5rem;
 }
 .chat_options .btn:first-child {
   margin-right: 0;
 }
 
 .tab_nav {
-  padding: 0.5rem 0.5rem;
+  padding: 0 0.5rem;
 }
 .tab_nav .nav {
   border-bottom: 1px solid #ccc;
@@ -176,6 +195,7 @@ body {
   border: 1px solid transparent;
   border-bottom: none;
   font-weight: 600;
+  padding: 0.2rem 0.5rem;
 }
 .tab_nav .nav .nav-link.active {
   color: #555;
@@ -187,12 +207,18 @@ body {
 }
 .tab_nav .btn {
   border-radius: 0;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0.3rem 0.4rem;
 }
 
 .form-control {
-  text-align: left;
-  border-radius: 0.2rem;
+  text-align: right;
+  border-radius: 0.1rem;
   border-color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
 }
 .form-control:focus {
   outline: 1px solid rgb(0, 95, 204);
@@ -206,7 +232,8 @@ body {
 }
 .counter_strap > span {
   padding: 0.1rem 1rem;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 15px;
 }
 .counter_strap > span:first-child {
   padding: 0.1rem 2rem;
@@ -222,7 +249,7 @@ body {
 }
 
 .chatBlock {
-  padding: 0.5rem;
+  padding: 0 0.1rem;
   border-bottom: 1px solid #ccc;
 }
 .chatBlock:last-child {
@@ -240,15 +267,15 @@ body {
   margin: 0;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-right: 0.6rem;
   flex-shrink: 0;
 }
 .chatBlock .u-topic {
   font-size: 15px;
   margin: 0 0 0.4rem;
+  font-weight: bold;
 }
 .chatBlock .u-description {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 18px;
   margin: 0;
   color: #888;
@@ -256,7 +283,68 @@ body {
 
 .copyright-text {
   font-size: 12px;
-  text-align: center;
+  padding: 0 0.3rem;
   border-top: 1px solid #ccc;
+  height: 25px;
+  font-weight: bold;
+  color: lightslategrey;
+  display: flex;
+  align-items: center;
+}
+
+.room .chatBlock .u-pic {
+  width: 52px;
+  height: 52px;
+}
+.room .chatBlock .count {
+  font-size: 14px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.group .chat-list {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  overflow: auto;
+  padding-bottom: 1rem;
+}
+.group .chatBlock .u-pic {
+  width: 48px;
+  height: 48px;
+}
+.group .chatBlock .btn {
+  padding: 0 0.4rem;
+  border-radius: 0;
+}
+.group .chat_field .form-control {
+  min-height: 30px;
   height: 30px;
+}
+.group .chat_field .btn {
+  padding: 0.1rem 0.4rem;
+}
+
+input[type=color] {
+  border: none;
+}
+
+.settings .actBtns {
+  padding: 0 0.2rem;
+}
+.settings .actBtns > * {
+  margin-bottom: 2px;
+}
+.settings .actBtns .btn {
+  border-radius: 0;
+}
+.settings .actBtns .form-control {
+  height: 35px;
+}
+.settings .actBtns .btn-light {
+  border-color: #000;
 }
