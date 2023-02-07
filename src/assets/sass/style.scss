@@ -108,9 +108,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 60px;
+  bottom: 39px;
   width: 340px;
-  height: 100vh;
   border: 1px solid #000;
   opacity: 0;
   visibility: hidden;
@@ -137,6 +136,7 @@ body {
     }
     .btn {
       padding: .2rem .7rem;
+      border-color: #000;
     }
   }
 

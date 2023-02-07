@@ -578,7 +578,7 @@
             <button class="btn btn-secondary d-flex align-items-center" id="tab-5" data-bs-toggle="pill" data-bs-target="#tab5" type="button" role="tab" aria-controls="tab-5" aria-selected="false" onclick="showSidebar();"><img src="./imgs/settings.png" width="15" class="me-1" alt="">  الضبط</button>
         </div>
         <div class="sidepopup d-flex flex-column">
-            <div class="sidepopup__head p-2">
+            <div class="sidepopup__head p-1 px-2">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>المتواجدين</h2>
                     <button class="btn btn-danger panel-close">&times;</button>
@@ -588,8 +588,8 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
                     <div class="sidepopup__panel">
-                        <div class="my-1 px-1">
-                            <input type="text" class="form-control" placeholder=""/>
+                        <div class="">
+                            <input type="text" class="form-control bg-secondary" placeholder=""/>
                         </div>
         
                         <div class="chatBlock online d-flex">
@@ -823,7 +823,9 @@
                 </div>
                 <div class="tab-pane room fade" id="tab3" role="tabpanel" aria-labelledby="tab-3" tabindex="0">
                     <div class="sidepopup__panel">
-                        <button class="btn btn-success addGroup text-white">+ غرفه جديدة</button>
+                        <div class="bg-secondary">
+                            <button class="btn btn-success addGroup text-white">+ غرفه جديدة</button>
+                        </div>
                         <div class="chatBlock d-flex justify-content-between p-1">
                             <div class="d-flex">
                                 <figure class="u-pic" style="background-image: url('./imgs/room.png');"></figure>

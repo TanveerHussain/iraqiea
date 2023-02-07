@@ -94,9 +94,8 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 60px;
+  bottom: 39px;
   width: 340px;
-  height: 100vh;
   border: 1px solid #000;
   opacity: 0;
   visibility: hidden;
@@ -121,6 +120,7 @@ body {
 }
 .sidepopup__head .btn {
   padding: 0.2rem 0.7rem;
+  border-color: #000;
 }
 .sidepopup .tab-content {
   flex: 1;
